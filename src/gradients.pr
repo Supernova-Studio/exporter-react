@@ -1,0 +1,30 @@
+{*
+
+Generate all gradient tokens as named variables.
+Tokens are named by their group path and then name, 
+and their value rendered using `gradient-color` blueprint
+
+*}
+{[ global CURRENT_TYPE = "Gradient" /]}
+
+{[ const colorBehavior = @js.getBehavior("color") /]}
+{[ const measureBehavior = @js.getBehavior("measure") /]}
+{[ const behavior = @js.getBehavior(CURRENT_TYPE) /]}
+
+import { {{ colorBehavior.varName }} } from './{{ colorBehavior.fileName }}';
+import { {{ measureBehavior.varName }} } from './{{ measureBehavior.fileName }}';
+
+
+{[ const tokens = @ds.tokensByType(CURRENT_TYPE) /]}
+{[ for token in tokens ]}
+{[ inject "rendered-token-var" context token /]}    
+{[/]}
+
+
+export const {{ behavior.varName }} = {
+{[ for token in tokens ]}
+  {[ inject "rendered-description" context token /]}
+  {[ inject "rendered-name" context token /]},
+
+{[/]}
+}

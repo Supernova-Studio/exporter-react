@@ -1,18 +1,22 @@
 {*
 
-Generate all color tokens as named variables.
+Generate all shadow tokens as named variables.
 Tokens are named by their group path and then name, 
-and their value rendered using `rendered-color` blueprint
+and their value rendered using `shadow-color` blueprint
 
 *}
-{[ global CURRENT_TYPE = "Color" /]}
+{[ global CURRENT_TYPE = "Typography" /]}
 
+{[ const measureBehavior = @js.getBehavior("measure") /]}
 {[ const behavior = @js.getBehavior(CURRENT_TYPE) /]}
-{[ const tokens = @ds.tokensByType(CURRENT_TYPE) /]}
 
+import { {{ measureBehavior.varName }} } from './{{ measureBehavior.fileName }}';
+
+{[ const tokens = @ds.tokensByType(CURRENT_TYPE) /]}
 {[ for token in tokens ]}
 {[ inject "rendered-token-var" context token /]}    
 {[/]}
+
 
 export const {{ behavior.varName }} = {
 {[ for token in tokens ]}

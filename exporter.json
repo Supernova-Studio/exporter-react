@@ -14,7 +14,8 @@
     "homepage": "https://supernova.io",
     "config": {
         "output": "output.json",
-        "sources": "sources.json"
+        "sources": "sources.json",
+        "js": "src/js/helpers.js"
     },
     "engines": {
         "pulsar": "1.0.0",

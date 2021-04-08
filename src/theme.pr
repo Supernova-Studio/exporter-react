@@ -1,0 +1,22 @@
+{[ const colorBehavior = @js.getBehavior("color") /]}
+{[ const borderBehavior = @js.getBehavior("border") /]}
+{[ const gradientBehavior = @js.getBehavior("gradient") /]}
+{[ const measureBehavior = @js.getBehavior("measure") /]}
+{[ const shadowBehavior = @js.getBehavior("shadow") /]}
+{[ const typographyBehavior = @js.getBehavior("typography") /]}
+
+import { {{ colorBehavior.varName }} } from './{{ colorBehavior.fileName }}';
+import { {{ borderBehavior.varName }} } from './{{ borderBehavior.fileName }}';
+import { {{ gradientBehavior.varName }} } from './{{ gradientBehavior.fileName }}';
+import { {{ measureBehavior.varName }} } from './{{ measureBehavior.fileName }}';
+import { {{ shadowBehavior.varName }} } from './{{ shadowBehavior.fileName }}';
+import { {{ typographyBehavior.varName }} } from './{{ typographyBehavior.fileName }}';
+
+export const Theme = {
+    {{ colorBehavior.themeProperty }}: {{ colorBehavior.varName }},
+    {{ borderBehavior.themeProperty }}: {{ borderBehavior.varName }},
+    {{ gradientBehavior.themeProperty }}: {{ gradientBehavior.varName }},
+    {{ measureBehavior.themeProperty }}: {{ measureBehavior.varName }},
+    {{ shadowBehavior.themeProperty }}: {{ shadowBehavior.varName }},
+    {{ typographyBehavior.themeProperty }}: {{ typographyBehavior.varName }},
+};

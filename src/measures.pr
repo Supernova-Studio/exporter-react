@@ -1,11 +1,11 @@
 {*
 
-Generate all color tokens as named variables.
+Generate all measure tokens as named variables.
 Tokens are named by their group path and then name, 
-and their value rendered using `rendered-color` blueprint
+and their value rendered using `rendered-measure` blueprint
 
 *}
-{[ global CURRENT_TYPE = "Color" /]}
+{[ global CURRENT_TYPE = "Measure" /]}
 
 {[ const behavior = @js.getBehavior(CURRENT_TYPE) /]}
 {[ const tokens = @ds.tokensByType(CURRENT_TYPE) /]}
