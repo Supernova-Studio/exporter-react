@@ -74,5 +74,4 @@ Rendered as:
   {[/]}
   letterSpacing: {[ inject "rendered-measure" context context.letterSpacing /]},
   textIndent: {[ inject "rendered-measure" context context.paragraphIndent /]},
-}
-{[/]}
+}{[/]}

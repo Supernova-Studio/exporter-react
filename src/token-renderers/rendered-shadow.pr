@@ -54,6 +54,5 @@ Xpx Xpx Xpx [Rendered Color];
   offsetY: {[ inject "rendered-measure" context context.y /]},
   radius: {[ inject "rendered-measure" context context.radius /]},
   spread: {[ inject "rendered-measure" context context.spread /]},
-  color: {[ inject "rendered-color" context context.color /]}
-}
-{[/]}
+  color: {[ inject "rendered-color" context context.color /]},
+}{[/]}

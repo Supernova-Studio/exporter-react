@@ -62,18 +62,22 @@ const BEHAVIOR = {
     themeProperty: "typographies",
     tokenPrefix: "",
   },
+  radius: {
+    fileName: "radii", // this should be somehow synced with output.json contents
+    varName: "Raddii",
+    themeProperty: "radii",
+    tokenPrefix: "",
+  },
+  unknown: {
+    fileName: "uknown",
+    varName: "Unknowns",
+    themeProperty: "unknowns",
+    tokenPrefix: "",
+  }
 };
 
 Pulsar.registerFunction("getBehavior", function (tokenType) {
-  const behavior = BEHAVIOR[tokenType.toLowerCase()];
-  return (
-    behavior || {
-      fileName: "uknown",
-      varName: "Unknowns",
-      themeProperty: "unknowns",
-      tokenPrefix: "",
-    }
-  );
+  return BEHAVIOR[tokenType.toLowerCase()] || BEHAVIOR['unknown'];
 });
 
 Pulsar.registerFunction("buildReferenceMeta", function(tokenType, tokenValue){

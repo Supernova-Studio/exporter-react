@@ -1,0 +1,51 @@
+{*
+
+Injectable blueprint that represents Measure token as CSS string. 
+Note that this only converts the value, actual name is provided somewhere else
+
+
+Source data: Measure Value (https://developers.supernova.io/design-system-data/tokens/measures)
+Note: Value is passed as `context` property because it is injected
+
+{
+    "radius": {
+      "unit": "px",
+      "measure": double
+      "referencedToken": Measure | null
+    },
+    "topLeft": {
+      "unit": "px",
+      "measure": double
+      "referencedToken": Measure | null
+    },
+    "topRight": {
+      "unit": "px",
+      "measure": double
+      "referencedToken": Measure | null
+    },
+    "bottomLeft": {
+      "unit": "px",
+      "measure": double
+      "referencedToken": Measure | null
+    },
+    "bottomRight": {
+      "unit": "px",
+      "measure": double
+      "referencedToken": Measure | null
+    },
+    "referencedToken": Radius | null
+  }
+
+
+*}
+{[ inject "reference-wrapper" context @js.buildReferenceMeta("Radius", context) ]}
+{
+  {[ if @compare.nonnull(context.radius) ]}
+  radius: {[ inject "rendered-measure" context context.radius /]},
+{[ else ]}
+  topLeft: {[ inject "rendered-measure" context context.topLeft /]},
+  topRight: {[ inject "rendered-measure" context context.topRight /]},
+  bottomLeft: {[ inject "rendered-measure" context context.bottomLeft /]},
+  bottomRight: {[ inject "rendered-measure" context context.bottomRight /]},
+{[/]}
+}{[/]}

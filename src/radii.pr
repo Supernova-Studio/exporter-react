@@ -1,0 +1,26 @@
+{*
+
+Generate all shadow tokens as named variables.
+Tokens are named by their group path and then name
+
+*}
+{[ global CURRENT_TYPE = "Radius" /]}
+
+{[ const measureBehavior = @js.getBehavior("measure") /]}
+{[ const behavior = @js.getBehavior(CURRENT_TYPE) /]}
+
+import { {{ measureBehavior.varName }} } from './{{ measureBehavior.fileName }}';
+
+{[ const tokens = @ds.tokensByType(CURRENT_TYPE) /]}
+{[ for token in tokens ]}
+{[ inject "rendered-token-var" context token /]}    
+{[/]}
+
+
+export const {{ behavior.varName }} = {
+{[ for token in tokens ]}
+  {[ inject "rendered-description" context token /]}
+  {[ inject "rendered-name" context token /]},
+
+{[/]}
+}

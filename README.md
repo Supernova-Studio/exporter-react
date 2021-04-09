@@ -14,6 +14,7 @@ The React Exporter allows you to **produce production-ready code for all product
 - [x] Gradients
 - [x] Shadows
 - [x] Borders
+- [x] Radii
 
 You can generate all production ready-code either manually using Supernova's [VS Code extension](https://marketplace.visualstudio.com/items?itemName=SupernovaIO.pulsar-vsc-extension), or automate your code delivery pipeline using Supernova [Design Continuous Delivery](https://supernova.io/automated-code-delivery).
 
@@ -24,19 +25,18 @@ Once you have run the exporter against your design system, you can start using t
 
 ### [Example 1]
 
-[Todo description]
 
 ```
-[Code]
+<div style={{color: theme.colors.primary}}>...</div>
 ```
 
 
 ### [Example 2]
 
-[Todo description]
-
 ```
-Code
+const Header = styled.h1`
+ font-family: ${theme.typographies.header.fontFamily}
+`
 ```
 
 ## Installing

@@ -27,8 +27,7 @@ Note: Value is passed as `context` property because it is injected
 {[ set unit = "em"/]}
 {[/]}
 {
- measure: {{ context.measure }} ,
+ measure: {{ context.measure }},
  unit: "{{ context.unit }}",
- css: "{{ context.measure }} {{ unit }}"
-}
-{[/]}
+ css: "{{ context.measure }}{{ unit }}"
+}{[/]}

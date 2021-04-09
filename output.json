@@ -21,6 +21,10 @@
             "write_to": "shadows.ts"
         },
         {
+            "invoke": "radii.pr",
+            "write_to": "radii.ts"
+        },
+        {
             "invoke": "typography.pr",
             "write_to": "typography.ts"
         },

@@ -32,4 +32,5 @@ Rendered as:
 {[ case "Border" ]}{[ inject "rendered-border" context token.value /]}
 {[ case "Measure" ]}{[ inject "rendered-measure" context token.value /]} 
 {[ case "Gradient" ]}{[ inject "rendered-gradient" context token.value /]} 
+{[ case "Radius" ]}{[ inject "rendered-radius" context token.value /]} 
 {[/]}
