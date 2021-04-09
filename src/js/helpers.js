@@ -14,9 +14,14 @@ Pulsar.registerFunction(
     let sentence = segments.join(" ");
 
     // Return camelcased string from all segments
-    return sentence
+     sentence = sentence
       .toLowerCase()
       .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+
+    if (/^\d/.test(sentence)) {
+      sentence = '_' + sentence;
+    }
+    return sentence;
   }
 );
 
