@@ -3,13 +3,13 @@
     "name": "React",
     "description": "React token and style exporter",
     "source_dir": "src",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "tags": [
         "React",
         "Tokens",
         "Styles"
     ],
-    "author": "Jiri Trecak",
+    "author": "Ivan Terpugov & Jiri Trecak",
     "organization": "Supernova",
     "homepage": "https://supernova.io",
     "config": {
