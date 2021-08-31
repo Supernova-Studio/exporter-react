@@ -6,15 +6,15 @@ and their value rendered using `rendered-border` blueprint
 
 *}
 {[ global CURRENT_TYPE = "Border" /]}
-{[ const colorBehavior = @js.getBehavior("color") /]}
-{[ const measureBehavior = @js.getBehavior("measure") /]}
-{[ const behavior = @js.getBehavior(CURRENT_TYPE) /]}
+{[ const colorBehavior = getBehavior("color") /]}
+{[ const measureBehavior = getBehavior("measure") /]}
+{[ const behavior = getBehavior(CURRENT_TYPE) /]}
 
 import { {{ colorBehavior.varName }} } from './{{ colorBehavior.fileName }}';
 import { {{ measureBehavior.varName }} } from './{{ measureBehavior.fileName }}';
 
 
-{[ const tokens = @ds.tokensByType(CURRENT_TYPE) /]}
+{[ const tokens = ds.tokensByType(CURRENT_TYPE) /]}
 {[ for token in tokens ]}
 {[ inject "rendered-token-var" context token /]}    
 {[/]}

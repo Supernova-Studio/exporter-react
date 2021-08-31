@@ -48,7 +48,7 @@ Rendered as:
 Xpx Xpx Xpx [Rendered Color];
 
 *}
-{[ inject "reference-wrapper" context @js.buildReferenceMeta("Shadow", context) ]}
+{[ inject "reference-wrapper" context buildReferenceMeta("Shadow", context) ]}
 {  
   offsetX: {[ inject "rendered-measure" context context.x /]},
   offsetY: {[ inject "rendered-measure" context context.y /]},

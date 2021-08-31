@@ -16,15 +16,15 @@ Note: Value is passed as `context` property because it is injected
 }
 
 *}
-{[ inject "reference-wrapper" context @js.buildReferenceMeta("Measure", context) ]}
+{[ inject "reference-wrapper" context buildReferenceMeta("Measure", context) ]}
 {[ let unit = "px" /]}
 {[ switch context.unit ]}
-{[ case "Points"]}
-{[ set unit = "pt"/]}
-{[ case "Percent"]}
-{[ set unit = "%"/]}
-{[ case "Ems"]}
-{[ set unit = "em"/]}
+  {[ case "Points"]}
+  {[ set unit = "pt"/]}
+  {[ case "Percent"]}
+  {[ set unit = "%"/]}
+  {[ case "Ems"]}
+  {[ set unit = "em"/]}
 {[/]}
 {
  measure: {{ context.measure }},

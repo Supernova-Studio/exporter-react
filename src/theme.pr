@@ -1,13 +1,13 @@
 {[ const types = ["color","border","gradient","measure","shadow","radius","typography"] /]}
 
 {[ for type in types ]}
-{[ const behavior = @js.getBehavior(type) /]}
+{[ const behavior = getBehavior(type) /]}
 import { {{ behavior.varName }} } from './{{ behavior.fileName }}';
 {[/]}
 
 export const Theme = {
     {[ for type in types ]}
-    {[ const behavior = @js.getBehavior(type) /]}
+    {[ const behavior = getBehavior(type) /]}
     {{ behavior.themeProperty }}: {{ behavior.varName }},
     {[/]}
 };

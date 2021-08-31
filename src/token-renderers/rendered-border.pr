@@ -33,7 +33,7 @@ Rendered as:
 Xpx solid (rendered-color.pr);
 
 *}
-{[ inject "reference-wrapper" context @js.buildReferenceMeta("Border", context) ]}
+{[ inject "reference-wrapper" context buildReferenceMeta("Border", context) ]}
 {
   color: {[ inject "rendered-color" context context.color /]},
   witdh: {[ inject "rendered-measure" context context.width /]},

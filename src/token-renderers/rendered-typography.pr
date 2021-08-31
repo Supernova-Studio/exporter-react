@@ -59,17 +59,17 @@ Rendered as:
 }
 
 *}
-{[ inject "reference-wrapper" context @js.buildReferenceMeta("Typography", context) ]}
+{[ inject "reference-wrapper" context buildReferenceMeta("Typography", context) ]}
 {
   {[ let fontStyle = "normal" /]}
-  {[ if @ds.fonts.isItalic(context.font) ]}
+  {[ if ds.isFontItalic(context.font) ]}
     {[ set fontStyle = "italic" /]}
   {[/]}
   fontFamily: "{{ context.font.family }}",
   fontStyle: "{{ fontStyle }}",
-  fontWeight: {{ @ds.fonts.weight(context.font) }},
+  fontWeight: {{ ds.fontWeight(context.font) }},
   fontSize: {[ inject "rendered-measure" context context.fontSize /]},
-  {[ if @compare.nonnull(context.lineHeight) ]}
+  {[ if context.lineHeight ]}
   lineHeight: {[ inject "rendered-measure" context context.lineHeight /]},
   {[/]}
   letterSpacing: {[ inject "rendered-measure" context context.letterSpacing /]},

@@ -38,11 +38,11 @@ Note: Value is passed as `context` property because it is injected
 
 
 *}
-{[ inject "reference-wrapper" context @js.buildReferenceMeta("Radius", context) ]}
+{[ inject "reference-wrapper" context buildReferenceMeta("Radius", context) ]}
 {
-  {[ if @compare.nonnull(context.radius) ]}
+  {[ if (context.radius !== null) ]}
   radius: {[ inject "rendered-measure" context context.radius /]},
-{[ else ]}
+{[ elseif (context.topLeft && context.topRight && context.bottomLeft && context.bottomRight) ]}
   topLeft: {[ inject "rendered-measure" context context.topLeft /]},
   topRight: {[ inject "rendered-measure" context context.topRight /]},
   bottomLeft: {[ inject "rendered-measure" context context.bottomLeft /]},

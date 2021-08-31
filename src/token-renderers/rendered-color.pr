@@ -26,6 +26,6 @@ Rendered as:
 #rrggbbaa if it is semi-transparent color
 
 *}
-{[ inject "reference-wrapper" context @js.buildReferenceMeta("Color", context) ]}
-{[ if @compare.lessThan(context.a, 255) ]}"#{{ context.hex }}"{[ else ]}"#{{ context.hex.substring(0, 6) }}"{[/]}
+{[ inject "reference-wrapper" context buildReferenceMeta("Color", context) ]}
+{[ if (context.a < 255) ]}"#{{ context.hex }}"{[ else ]}"#{{ context.hex.substring(0, 6) }}"{[/]}
 {[/]}
