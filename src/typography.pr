@@ -12,7 +12,8 @@ and their value rendered using `shadow-color` blueprint
 
 import { {{ measureBehavior.varName }} } from './{{ measureBehavior.fileName }}';
 
-{[ const tokens = ds.tokensByType(CURRENT_TYPE) /]}
+{[ let brand = ds.currentBrand() /]}
+{[ const tokens = ds.tokensByType(CURRENT_TYPE, brand.id) /]}
 {[ for token in tokens ]}
 {[ inject "rendered-token-var" context token /]}    
 {[/]}
