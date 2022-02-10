@@ -3,7 +3,7 @@
     "name": "React",
     "description": "React token and style exporter",
     "source_dir": "src",
-    "version": "1.2",
+    "version": "1.2.1",
     "tags": [
         "React",
         "Tokens",
