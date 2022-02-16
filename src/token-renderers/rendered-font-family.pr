@@ -1,0 +1,17 @@
+{*
+
+Injectable blueprint that renders font family names with handling for janky Circular Pro font names
+
+{
+  "context": {
+      "family": "CircularXX TT",
+      "subfamily": "Black",
+      "referencedToken": null
+    }
+}
+
+*}
+{[ if (context.family === "Inter") ]}
+"{{ context.family }}"
+{[ else ]}
+"CircularXXWeb-{{ context.subfamily }}"{[/]}

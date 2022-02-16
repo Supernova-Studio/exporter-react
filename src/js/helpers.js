@@ -102,9 +102,8 @@ Pulsar.registerFunction("buildReferenceMeta", function (tokenType, tokenValue) {
   };
 });
 
-Pulsar.registerFunction("exclude", function (tokens, valueToExclude) {
+Pulsar.registerFunction("excludeOriginName", function (tokens, valueToExclude) {
   return tokens.filter(token => {
-    console.log(token.origin.name);
     return token.origin.name.toLowerCase().indexOf(valueToExclude.toLowerCase()) <= -1;
   });
 });

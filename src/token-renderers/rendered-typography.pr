@@ -65,13 +65,16 @@ Rendered as:
   {[ if ds.isFontItalic(context.font) ]}
     {[ set fontStyle = "italic" /]}
   {[/]}
-  fontFamily: "{{ context.font.family }}",
+  fontFamily: {[ inject "rendered-font-family" context context.font /]},
   fontStyle: "{{ fontStyle }}",
   fontWeight: {{ ds.fontWeight(context.font) }},
-  fontSize: {[ inject "rendered-measure" context context.fontSize /]},
+  fontSize: {[ inject "rendered-css" context context.fontSize /]},
+  lineHeight: {[ inject "rendered-css" context context.lineHeight /]},
+  letterSpacing: {[ inject "rendered-css" context context.letterSpacing /]},
+  fontSizeM: {[ inject "rendered-measure" context context.fontSize /]},
   {[ if context.lineHeight ]}
-  lineHeight: {[ inject "rendered-measure" context context.lineHeight /]},
+  lineHeightM: {[ inject "rendered-measure" context context.lineHeight /]},
   {[/]}
-  letterSpacing: {[ inject "rendered-measure" context context.letterSpacing /]},
-  textIndent: {[ inject "rendered-measure" context context.paragraphIndent /]},
+  letterSpacingM: {[ inject "rendered-measure" context context.letterSpacing /]},
+  textIndentM: {[ inject "rendered-measure" context context.paragraphIndent /]},
 }{[/]}
