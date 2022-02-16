@@ -7,7 +7,7 @@ Pulsar.registerFunction(
     // Create array with all path segments and token name at the end
     const segments = [...tokenGroup.path];
     if (!tokenGroup.isRoot) {
-      segments.push(tokenGroup.name)
+      segments.push(tokenGroup.name);
     }
     segments.push(token.name);
 
@@ -19,18 +19,18 @@ Pulsar.registerFunction(
     let sentence = segments.join(" ");
 
     // Return camelcased string from all segments
-     sentence = sentence
+    sentence = sentence
       .toLowerCase()
       .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
 
     // only allow letters, digits, underscore
-    sentence = sentence.replace(/[^a-zA-Z0-9_]/g, '_')
+    sentence = sentence.replace(/[^a-zA-Z0-9_]/g, '_');
 
     // prepend underscore if it starts with digit 
     if (/^\d/.test(sentence)) {
       sentence = '_' + sentence;
     }
-    
+
     return sentence;
   }
 );
@@ -95,9 +95,15 @@ Pulsar.registerFunction("getBehavior", function (tokenType) {
   return BEHAVIOR[tokenType.toLowerCase()] || BEHAVIOR['unknown'];
 });
 
-Pulsar.registerFunction("buildReferenceMeta", function(tokenType, tokenValue){
+Pulsar.registerFunction("buildReferenceMeta", function (tokenType, tokenValue) {
   return {
     tokenType,
     referencedToken: tokenValue.referencedToken
-  }
-})
+  };
+});
+
+Pulsar.registerFunction("excludeOriginName", function (tokens, valueToExclude) {
+  return tokens.filter(token => {
+    return token.origin.name.toLowerCase().indexOf(valueToExclude.toLowerCase()) <= -1;
+  });
+});

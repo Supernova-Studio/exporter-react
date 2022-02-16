@@ -14,13 +14,14 @@ import { {{ measureBehavior.varName }} } from './{{ measureBehavior.fileName }}'
 
 {[ let brand = ds.currentBrand() /]}
 {[ const tokens = ds.tokensByType(CURRENT_TYPE, brand.id) /]}
-{[ for token in tokens ]}
+{[ const filteredTokens = excludeOriginName(tokens, 'mobile') /]}
+{[ for token in filteredTokens ]}
 {[ inject "rendered-token-var" context token /]}    
 {[/]}
 
 
 export const {{ behavior.varName }} = {
-{[ for token in tokens ]}
+{[ for token in filteredTokens ]}
   {[ inject "rendered-description" context token /]}
   {[ inject "rendered-name" context token /]},
 
