@@ -14,7 +14,8 @@ import { {{ measureBehavior.varName }} } from './{{ measureBehavior.fileName }}'
 
 {[ let brand = ds.currentBrand() /]}
 {[ const tokens = ds.tokensByType(CURRENT_TYPE, brand.id) /]}
-{[ for token in tokens ]}
+{[ const filteredTokens = exclude(tokens, 'mobile') /]}
+{[ for token in filteredTokens ]}
 {[ inject "rendered-token-var" context token /]}    
 {[/]}
 

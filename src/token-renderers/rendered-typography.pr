@@ -52,9 +52,9 @@ Rendered as:
   fontFamily: "string",
   fontStyle: "string",
   fontWeight: number,
-  fontSize: Measure,
-  lineHeight: Measure,
-  letterSpacing: Measure,
+  fontSize: "string",
+  lineHeight: "string",
+  letterSpacing: "string",
   textIndent: Measure,
 }
 
