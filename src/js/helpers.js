@@ -19,9 +19,12 @@ Pulsar.registerFunction(
     let sentence = segments.join(" ");
 
     // Return camelcased string from all segments
-     sentence = sentence
+    sentence = sentence
       .toLowerCase()
-      .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+      .replace(/[^a-zA-Z0-9_]+(.)/g, (m, chr) => chr.toUpperCase());
+
+    // if string was started with special character that was cut then turn first char to lowercase
+    sentence = sentence.charAt(0).toLowerCase() + sentence.slice(1);
 
     // only allow letters, digits, underscore
     sentence = sentence.replace(/[^a-zA-Z0-9_]/g, '_')
@@ -79,12 +82,12 @@ const BEHAVIOR = {
   },
   radius: {
     fileName: "radii", // this should be somehow synced with output.json contents
-    varName: "Raddii",
+    varName: "Radii",
     themeProperty: "radii",
     tokenPrefix: "",
   },
   unknown: {
-    fileName: "uknown",
+    fileName: "unknown",
     varName: "Unknowns",
     themeProperty: "unknowns",
     tokenPrefix: "",
