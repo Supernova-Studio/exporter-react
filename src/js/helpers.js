@@ -82,12 +82,12 @@ const BEHAVIOR = {
   },
   radius: {
     fileName: "radii", // this should be somehow synced with output.json contents
-    varName: "Radii",
+    varName: "Raddii",
     themeProperty: "radii",
     tokenPrefix: "",
   },
   unknown: {
-    fileName: "unknown",
+    fileName: "uknown",
     varName: "Unknowns",
     themeProperty: "unknowns",
     tokenPrefix: "",
