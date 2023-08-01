@@ -19,9 +19,12 @@ Pulsar.registerFunction(
     let sentence = segments.join(" ");
 
     // Return camelcased string from all segments
-     sentence = sentence
+    sentence = sentence
       .toLowerCase()
-      .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+      .replace(/[^a-zA-Z0-9_]+(.)/g, (m, chr) => chr.toUpperCase());
+
+    // if string was started with special character that was cut then turn first char to lowercase
+    sentence = sentence.charAt(0).toLowerCase() + sentence.slice(1);
 
     // only allow letters, digits, underscore
     sentence = sentence.replace(/[^a-zA-Z0-9_]/g, '_')
