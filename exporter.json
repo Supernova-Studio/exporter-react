@@ -1,25 +1,21 @@
 {
-    "id": "io.supernova.react",
-    "name": "React",
-    "description": "React token and style exporter",
-    "source_dir": "src",
-    "version": "1.2.3",
-    "tags": [
-        "React",
-        "Tokens",
-        "Styles"
-    ],
-    "author": "Ivan Terpugov & Jiri Trecak",
-    "organization": "Supernova",
-    "homepage": "https://supernova.io",
-    "usesBrands": true,
-    "config": {
-        "output": "output.json",
-        "sources": "sources.json",
-        "js": "src/js/helpers.js"
-    },
-    "engines": {
-        "pulsar": "1.0.0",
-        "supernova": "1.0.0"
-    }
+  "id": "io.supernova.react",
+  "name": "React",
+  "description": "React token and style exporter",
+  "source_dir": "src",
+  "version": "1.2.4",
+  "tags": ["React", "Tokens", "Styles"],
+  "author": "Ivan Terpugov & Jiri Trecak",
+  "organization": "Supernova",
+  "homepage": "https://supernova.io",
+  "usesBrands": true,
+  "config": {
+    "output": "output.json",
+    "sources": "sources.json",
+    "js": "src/js/helpers.js"
+  },
+  "engines": {
+    "pulsar": "1.0.0",
+    "supernova": "1.0.0"
+  }
 }
